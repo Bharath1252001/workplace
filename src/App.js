@@ -1,17 +1,18 @@
-import Navs from "./Navs";
 import "./App.css";
-import { UserContextProvider } from "./Context/UserContext";
-import { ReactNotifications } from 'react-notifications-component'
-import 'react-notifications-component/dist/theme.css'
+import Navs from "./Navs";
+import { UserContextProvider } from "./context/userContext";
+import { DarkmodeContextProvider } from "./context/DarkmodeContext";
 
 function App() {
   return (
-    <>
+    <div className="App">
+      <DarkmodeContextProvider>
       <UserContextProvider>
-      <ReactNotifications />
+    
         <Navs />
       </UserContextProvider>
-    </>
+      </DarkmodeContextProvider>
+    </div>
   );
 }
 
